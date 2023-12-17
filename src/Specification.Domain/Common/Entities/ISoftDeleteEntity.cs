@@ -1,4 +1,4 @@
-namespace Specification.Domain.Base.Models
+namespace Specification.Domain.Common.Entities
 {
     public interface ISoftDeleteEntity
     {

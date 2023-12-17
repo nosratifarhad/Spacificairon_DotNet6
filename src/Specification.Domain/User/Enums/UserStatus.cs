@@ -1,4 +1,4 @@
-namespace Specification.Domain.Enums
+namespace Specification.Domain.User.Enums
 {
     public enum UserStatus
     {
