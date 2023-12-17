@@ -1,6 +1,6 @@
-using Specification.Domain.Base.Models;
+using Specification.Domain.Common.Entities;
 
-namespace Specification.Domain.Base.Repositories
+namespace Specification.Domain.Common.Repositories
 {
     public interface IUnitOfWork
     {

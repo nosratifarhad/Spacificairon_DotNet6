@@ -1,7 +1,7 @@
-using Specification.Domain.Base.Models;
-using Specification.Domain.Base.Specifications;
+using Specification.Domain.Common.Entities;
+using Specification.Domain.Common.Specifications;
 
-namespace Specification.Domain.Base.Repositories
+namespace Specification.Domain.Common.Repositories
 {
     public interface IBaseRepositoryAsync<T> where T : BaseEntity
     {

@@ -1,9 +1,9 @@
-﻿using Specification.Domain.Base.Models;
-using Specification.Domain.Enums;
+﻿using Specification.Domain.Common.Entities;
+using Specification.Domain.User.Enums;
 
-namespace Specification.Domain.Entities
+namespace Specification.Domain.User.Entities
 {
-    public class User : BaseEntity, IAuditableEntity, ISoftDeleteEntity
+    public class UserBase : BaseEntity, IAuditableEntity, ISoftDeleteEntity
     {
         public string FirstName { get; set; }
 
