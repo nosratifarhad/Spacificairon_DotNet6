@@ -1,11 +1,12 @@
+using Specification.Application.DTOs;
 using Specification.Application.ViewModels;
 
-namespace Specification.Application.Services.Contracts
+namespace Specification.Application.Services.Contracts;
+
+public interface IUserService
 {
-    public interface IUserService
-    {
+    Task<int> CreateUser(CreateUserDto req);
 
-        Task<UserViewModel> GetAllUsersAsync();
+    Task<UserViewModel> GetAllUsersAsync();
 
-    }
 }

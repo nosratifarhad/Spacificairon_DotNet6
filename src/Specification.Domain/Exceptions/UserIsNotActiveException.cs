@@ -1,4 +1,4 @@
-namespace Specification.Domain.User.Exceptions
+namespace Specification.Domain.Exceptions
 {
     public class UserIsNotActiveException : Exception
     {

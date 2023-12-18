@@ -8,7 +8,7 @@ namespace Specification.Domain.User.Specifications
     {
         public static BaseSpecification<UserBase> GetUserByEmailAndPasswordSpec(string emailId, string password)
         {
-            return new BaseSpecification<UserBase>(x => x.EmailId == emailId && x.Password == password && x.IsDeleted == false);
+            return new BaseSpecification<UserBase>(x => x.Email == emailId && x.Password == password && x.IsDeleted == false);
         }
 
         public static BaseSpecification<UserBase> GetAllActiveUsersSpec()
