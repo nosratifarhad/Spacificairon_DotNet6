@@ -2,21 +2,21 @@ using Specification.Domain.User.Entities;
 
 namespace Specification.Application.DTOs;
 
-public class UserDTO
+public class UserDto
 {
-    public Guid Id { get; set; }
+    public int Id { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string EmailId { get; set; }
     public int Status { get; set; }
     public string StatusText { get; set; }
 
-    public UserDTO(UserBase user)
+    public UserDto(UserBase user)
     {
         Id = user.Id;
         FirstName = user.FirstName;
         LastName = user.LastName;
-        EmailId = user.EmailId;
+        EmailId = user.Email;
         Status = (int)user.Status;
         StatusText = user.Status.ToString();
     }
