@@ -5,6 +5,8 @@ namespace Specification.Domain.User.Entities
 {
     public class UserBase : BaseEntity, IAuditableEntity, ISoftDeleteEntity
     {
+        public string UserName { get; set; }
+
         public string FirstName { get; set; }
 
         public string LastName { get; set; }

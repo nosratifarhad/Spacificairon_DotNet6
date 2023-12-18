@@ -4,6 +4,8 @@ namespace Specification.Application.DTOs;
 
 public class CreateUserDto
 {
+    public string UserName { get; set; }
+
     public string FirstName { get; set; }
 
     public string LastName { get; set; }
