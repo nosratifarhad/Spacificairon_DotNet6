@@ -4,6 +4,7 @@ using Specification.Application.ViewModels;
 using Specification.Domain.Common.Repositories;
 using Specification.Domain.Exceptions;
 using Specification.Domain.User.Entities;
+using Specification.Domain.User.Enums;
 using Specification.Domain.User.Specifications;
 
 namespace Specification.Application.Services;
@@ -29,6 +30,8 @@ public class UserService : IUserService
     public async Task<int> CreateUser(CreateUserDto createUserDto)
     {
         ValidateCreateUserDto(createUserDto);
+
+        await ValidateUser(createUserDto);
 
         var userBase = CreateUserBase(createUserDto);
 
@@ -70,6 +73,16 @@ public class UserService : IUserService
 
         if (string.IsNullOrEmpty(createUserDto.Password))
             throw new ValidatePasswordException();
+    }
+
+    public async Task ValidateUser(CreateUserDto createUserDto)
+    {
+        var validateUserSpec = UserSpecifications.GetUserByUserNameSpec(createUserDto.UserName);
+
+        var user = await _unitOfWork.Repository<UserBase>().FirstOrDefaultAsync(validateUserSpec);
+
+        if (user != null)
+            throw new AlreadyExistsUserNameException(createUserDto.UserName);
     }
 
     private UserBase CreateUserBase(CreateUserDto createUserDto)
